@@ -51,16 +51,16 @@ public class ReactModalHostManager :
 
   @ReactProp(name = "statusBarTranslucent")
   public override fun setStatusBarTranslucent(
-      view: ReactModalHostView,
-      statusBarTranslucent: Boolean
+    view: ReactModalHostView,
+    statusBarTranslucent: Boolean
   ) {
     view.statusBarTranslucent = statusBarTranslucent
   }
 
   @ReactProp(name = "hardwareAccelerated")
   public override fun setHardwareAccelerated(
-      view: ReactModalHostView,
-      hardwareAccelerated: Boolean
+    view: ReactModalHostView,
+    hardwareAccelerated: Boolean
   ) {
     view.hardwareAccelerated = hardwareAccelerated
   }
@@ -78,8 +78,8 @@ public class ReactModalHostManager :
 
   @ReactProp(name = "supportedOrientations")
   public override fun setSupportedOrientations(
-      view: ReactModalHostView,
-      value: ReadableArray?
+    view: ReactModalHostView,
+    value: ReadableArray?
   ): Unit = Unit
 
   @ReactProp(name = "identifier")
@@ -116,9 +116,9 @@ public class ReactModalHostManager :
   }
 
   public override fun updateState(
-      view: ReactModalHostView,
-      props: ReactStylesDiffMap,
-      stateWrapper: StateWrapper
+    view: ReactModalHostView,
+    props: ReactStylesDiffMap,
+    stateWrapper: StateWrapper
   ): Any? {
     view.stateWrapper = stateWrapper
     return null
