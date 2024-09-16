@@ -77,6 +77,8 @@ cat << EOF >> src/config.h
 #undef HAVE_SYSCALL_H
 #undef HAVE_SYS_SYSCALL_H
 #undef OS_MACOSX
+/* NO_THREADS needed right now for Xcode 16 */
+#define NO_THREADS
 #endif
 
 /* Special configuration for ucontext */
