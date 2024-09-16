@@ -881,6 +881,7 @@ const CGFloat BACKGROUND_COLOR_ZPOSITION = -1024.0f;
     self.accessibilityElement.accessibilityElementsHidden = newViewProps.accessibilityElementsHidden;
   }
 
+#if !TARGET_OS_TV
   // `accessibilityShowsLargeContentViewer`
   if (oldViewProps.accessibilityShowsLargeContentViewer != newViewProps.accessibilityShowsLargeContentViewer) {
     if (@available(iOS 13.0, *)) {
@@ -900,6 +901,7 @@ const CGFloat BACKGROUND_COLOR_ZPOSITION = -1024.0f;
       self.largeContentTitle = RCTNSStringFromStringNilIfEmpty(newViewProps.accessibilityLargeContentTitle);
     }
   }
+#endif
 
   // `accessibilityTraits`
   if (oldViewProps.accessibilityTraits != newViewProps.accessibilityTraits) {
