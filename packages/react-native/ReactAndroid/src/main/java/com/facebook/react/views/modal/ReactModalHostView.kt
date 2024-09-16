@@ -255,7 +255,7 @@ public class ReactModalHostView(context: ThemedReactContext) :
           override fun onKey(dialog: DialogInterface, keyCode: Int, event: KeyEvent): Boolean {
             // Modal needs to send the key event to its own TV event handler
             // https://github.com/react-native-tvos/react-native-tvos/issues/609
-            hostView.androidHWInputDeviceHelper.handleKeyEvent(event, hostView.reactContext)
+            dialogRootViewGroup.androidHWInputDeviceHelper.handleKeyEvent(event, dialogRootViewGroup.reactContext)
             if (event.action == KeyEvent.ACTION_UP) {
               // We need to stop the BACK button and ESCAPE key from closing the dialog by default
               // so we capture that event and instead inform JS so that it can make the decision as
@@ -427,7 +427,6 @@ public class ReactModalHostView(context: ThemedReactContext) :
 
     private fun updateFirstChildView() {
       if (childCount > 0) {
-        hasAdjustedSize = false
         val viewTag: Int = getChildAt(0).id
         if (stateWrapper != null) {
           // This will only be called under Fabric
@@ -444,8 +443,6 @@ public class ReactModalHostView(context: ThemedReactContext) :
                 }
               })
         }
-      } else {
-        hasAdjustedSize = true
       }
     }
 
